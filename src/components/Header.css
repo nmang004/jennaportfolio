@@ -1,0 +1,50 @@
+.site-header {
+    position: fixed;
+    top: 2rem;
+    left: 2rem;
+    z-index: 100;
+}
+
+.logo-container {
+    display: flex;
+    align-items: flex-start;
+    gap: 1rem;
+    text-decoration: none;
+    color: var(--color-text);
+}
+
+.logo-icon img {
+    width: 40px;
+    height: 40px;
+    border-radius: 8px;
+    object-fit: cover;
+}
+
+.logo-text {
+    display: flex;
+    flex-direction: column;
+    gap: 0.2rem;
+}
+
+.logo-name {
+    font-family: var(--font-serif);
+    font-size: 1.5rem;
+    font-style: italic;
+    line-height: 1;
+}
+
+.logo-role {
+    font-family: var(--font-sans);
+    font-size: 0.75rem;
+    letter-spacing: 0.1em;
+    color: var(--color-text-light);
+    text-transform: uppercase;
+}
+
+@media (max-width: 768px) {
+    .site-header {
+        position: absolute;
+        top: 1.5rem;
+        left: 1.5rem;
+    }
+}

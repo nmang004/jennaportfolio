@@ -1,0 +1,49 @@
+.dock-container {
+    position: fixed;
+    bottom: 2rem;
+    left: 2rem;
+    z-index: 1000;
+}
+
+.dock {
+    background: rgba(235, 235, 235, 0.8);
+    backdrop-filter: blur(10px);
+    padding: 0.5rem;
+    border-radius: 12px;
+    display: flex;
+    gap: 0.5rem;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.5);
+}
+
+.dock-item {
+    padding: 0.75rem 1.5rem;
+    font-family: var(--font-sans);
+    font-size: 0.85rem;
+    font-weight: 500;
+    color: var(--color-text-light);
+    text-decoration: none;
+    border-radius: 8px;
+    transition: all 0.2s ease;
+    letter-spacing: 0.05em;
+}
+
+.dock-item:hover {
+    background: rgba(255, 255, 255, 0.8);
+    color: var(--color-text);
+}
+
+.dock-item.active {
+    background: #fff;
+    color: var(--color-text);
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+}
+
+@media (max-width: 768px) {
+    .dock-container {
+        left: 50%;
+        transform: translateX(-50%);
+        bottom: 1.5rem;
+        width: auto;
+    }
+}

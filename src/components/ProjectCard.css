@@ -1,0 +1,132 @@
+.project-card {
+    margin-bottom: 4rem;
+    width: 100%;
+}
+
+.card-inner {
+    display: grid;
+    grid-template-columns: 1.2fr 1.8fr;
+    /* More space for image */
+    background: #fcfcfc;
+    /* Very light, almost white background */
+    border: 1px solid #f0f0f0;
+    /* Subtle border */
+    border-radius: 24px;
+    overflow: hidden;
+    transition: transform 0.4s cubic-bezier(0.22, 1, 0.36, 1), box-shadow 0.4s ease;
+    text-decoration: none;
+    color: inherit;
+    min-height: 500px;
+    /* Taller cards */
+}
+
+.project-card:hover .card-inner {
+    transform: translateY(-4px);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.03);
+    border-color: #e5e5e5;
+}
+
+.card-content {
+    padding: 5rem 4rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    /* Push meta to bottom */
+    position: relative;
+}
+
+.card-title {
+    font-family: var(--font-serif);
+    font-size: 3rem;
+    font-weight: 400;
+    margin-bottom: 1.5rem;
+    line-height: 1.1;
+    color: #2a2a2a;
+}
+
+.card-description {
+    font-family: var(--font-sans);
+    font-size: 1.25rem;
+    color: #666;
+    line-height: 1.5;
+    max-width: 90%;
+    font-weight: 300;
+}
+
+.card-meta {
+    font-family: var(--font-sans);
+    font-size: 0.85rem;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: #999;
+    font-weight: 500;
+    display: flex;
+    gap: 0.5rem;
+    align-items: center;
+}
+
+/* Separator dot */
+.card-meta span:not(:last-child)::after {
+    content: "•";
+    margin-left: 0.5rem;
+    color: #ccc;
+}
+
+/* Hide the button for a cleaner look, or make it very subtle */
+.card-button {
+    display: none;
+}
+
+.project-card:hover .card-button {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.card-image-wrapper {
+    background: transparent;
+    /* Remove grey background */
+    position: relative;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding-right: 4rem;
+    /* Space on the right */
+}
+
+.card-image {
+    width: 100%;
+    height: auto;
+    max-height: 90%;
+    object-fit: contain;
+    transition: transform 0.6s cubic-bezier(0.22, 1, 0.36, 1);
+    /* Drop shadow for the device mockup itself */
+    filter: drop-shadow(0 20px 40px rgba(0, 0, 0, 0.15));
+}
+
+.project-card:hover .card-image {
+    transform: scale(1.02);
+}
+
+@media (max-width: 1024px) {
+    .card-inner {
+        grid-template-columns: 1fr;
+        min-height: auto;
+    }
+
+    .card-content {
+        padding: 3rem;
+        order: 2;
+    }
+
+    .card-image-wrapper {
+        padding: 3rem 3rem 0;
+        order: 1;
+        min-height: 300px;
+        background: #fcfcfc;
+    }
+
+    .card-title {
+        font-size: 2.5rem;
+    }
+}
