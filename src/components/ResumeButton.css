@@ -4,20 +4,20 @@
     right: 2rem;
     z-index: 1000;
     padding: 0.75rem 1.5rem;
-    background-color: #ff69b4; /* HotPink */
-    color: white;
+    background-color: rgba(255, 105, 180, 0.1); /* Timid pink background */
+    color: #ff69b4; /* Star pink text */
     font-family: var(--font-sans);
     font-weight: 600;
     text-decoration: none;
     border-radius: 50px;
-    box-shadow: 0 4px 15px rgba(255, 105, 180, 0.3);
+    backdrop-filter: blur(8px);
+    border: 1px solid rgba(255, 105, 180, 0.3);
     transition: all 0.3s ease;
     display: flex;
     align-items: center;
     gap: 0.5rem;
     font-size: 0.9rem;
     letter-spacing: 0.05em;
-    border: 2px solid transparent;
 }
 
 .resume-button span {
@@ -26,11 +26,10 @@
 }
 
 .resume-button:hover {
-    background-color: #fff;
-    color: #ff69b4;
+    background-color: rgba(255, 105, 180, 0.2);
     border-color: #ff69b4;
     transform: translateY(-2px);
-    box-shadow: 0 6px 20px rgba(255, 105, 180, 0.4);
+    box-shadow: 0 4px 12px rgba(255, 105, 180, 0.15);
 }
 
 .resume-button:hover span {
