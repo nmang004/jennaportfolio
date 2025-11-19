@@ -6,7 +6,13 @@ import './Home.css';
 
 const Home = () => {
     return (
-        <div className="home-page">
+        <motion.div
+            className="home-page"
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            transition={{ duration: 0.5 }}
+        >
             <section className="hero container">
                 <motion.div
                     className="hero-content"
@@ -34,7 +40,7 @@ const Home = () => {
                     ))}
                 </div>
             </section>
-        </div>
+        </motion.div>
     );
 };
 

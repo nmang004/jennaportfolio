@@ -10,7 +10,7 @@ const FloatingDock = () => {
         { path: '/', label: 'HOME' },
         { path: '/', label: 'WORK', hash: '#work' }, // Using hash for scrolling if on same page
         { path: '/about', label: 'ABOUT' },
-        { path: 'mailto:hello@jennaeve.com', label: 'CONTACT', isExternal: true }
+        { path: '/contact', label: 'CONTACT' }
     ];
 
     return (

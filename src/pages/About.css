@@ -1,0 +1,122 @@
+.about-page {
+    padding-top: 8rem;
+    min-height: 100vh;
+}
+
+.about-container {
+    max-width: 1400px;
+    margin: 0 auto;
+    padding-left: 15%;
+    /* Align with Home page layout */
+    padding-right: 2rem;
+    padding-bottom: 8rem;
+}
+
+.about-title {
+    font-size: 4rem;
+    font-weight: 600;
+    line-height: 1.1;
+    margin-bottom: 3rem;
+    color: var(--color-text);
+}
+
+.about-bio {
+    font-size: 1.5rem;
+    line-height: 1.6;
+    max-width: 800px;
+    color: var(--color-text-light);
+    margin-bottom: 6rem;
+}
+
+.about-bio p {
+    margin-bottom: 1.5rem;
+}
+
+.about-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 4rem;
+    margin-bottom: 6rem;
+}
+
+.services-section h2,
+.experience-section h2 {
+    font-family: var(--font-serif);
+    font-size: 2rem;
+    font-weight: 400;
+    margin-bottom: 2rem;
+    border-bottom: 1px solid #e5e5e5;
+    padding-bottom: 1rem;
+}
+
+.services-section ul {
+    list-style: none;
+}
+
+.services-section li {
+    font-size: 1.2rem;
+    margin-bottom: 1rem;
+    color: var(--color-text);
+}
+
+.experience-item {
+    display: grid;
+    grid-template-columns: 1.5fr 1.5fr 1fr;
+    padding: 1rem 0;
+    border-bottom: 1px solid #f0f0f0;
+    font-size: 1.1rem;
+}
+
+.exp-role {
+    font-weight: 500;
+}
+
+.exp-company {
+    color: var(--color-text-light);
+}
+
+.exp-year {
+    text-align: right;
+    font-family: var(--font-sans);
+    font-size: 0.9rem;
+    color: #999;
+}
+
+.about-image-container {
+    width: 100%;
+    border-radius: 24px;
+    overflow: hidden;
+}
+
+.about-image-container img {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+@media (max-width: 1024px) {
+    .about-container {
+        padding-left: 2rem;
+        padding-right: 2rem;
+    }
+
+    .about-title {
+        font-size: 3rem;
+    }
+
+    .about-grid {
+        grid-template-columns: 1fr;
+        gap: 3rem;
+    }
+}
+
+@media (max-width: 768px) {
+    .experience-item {
+        grid-template-columns: 1fr;
+        gap: 0.25rem;
+    }
+
+    .exp-year {
+        text-align: left;
+    }
+}
