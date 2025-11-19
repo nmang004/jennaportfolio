@@ -8,7 +8,7 @@ export const projects = [
         year: "2024",
         role: "Brand Identity, Web Design",
         client: "Mama Mango's Bakery",
-        image: "/src/assets/work/mamamangos/brand-cover.jpg",
+        image: "/work/mamamangos/brand-cover.jpg",
         link: "/work/mamamangos",
         details: {
             content: [], // Kept for compatibility, but empty as we use sections
@@ -37,12 +37,12 @@ export const projects = [
             },
             {
                 type: 'image-full',
-                src: '/src/assets/work/mamamangos/screencapture-about.png',
+                src: '/work/mamamangos/screencapture-about.png',
                 alt: 'Mama Mangos About Page'
             },
             {
                 type: 'image-full',
-                src: '/src/assets/work/mamamangos/iphone-blue.png',
+                src: '/work/mamamangos/iphone-blue.png',
                 alt: 'Mobile View'
             },
             {
@@ -53,9 +53,9 @@ export const projects = [
             {
                 type: 'image-grid',
                 images: [
-                    '/src/assets/work/mamamangos/mamamangos-logo.png',
-                    '/src/assets/work/mamamangos/img-6837.jpg',
-                    '/src/assets/work/mamamangos/resize-05.png'
+                    '/work/mamamangos/mamamangos-logo.png',
+                    '/work/mamamangos/img-6837.jpg',
+                    '/work/mamamangos/resize-05.png'
                 ]
             },
             {
@@ -65,7 +65,7 @@ export const projects = [
             },
             {
                 type: 'image-full',
-                src: '/src/assets/work/mamamangos/bakery-interior.jpg',
+                src: '/work/mamamangos/bakery-interior.jpg',
                 alt: 'Bakery Interior'
             },
             {
@@ -76,8 +76,8 @@ export const projects = [
             {
                 type: 'image-grid',
                 images: [
-                    '/src/assets/work/mamamangos/screencapture-contact.png',
-                    '/src/assets/work/mamamangos/untitled-3.png'
+                    '/work/mamamangos/screencapture-contact.png',
+                    '/work/mamamangos/untitled-3.png'
                 ]
             },
             {
@@ -87,7 +87,7 @@ export const projects = [
             },
             {
                 type: 'image-full',
-                src: '/src/assets/work/mamamangos/social-media-mockup.png',
+                src: '/work/mamamangos/social-media-mockup.png',
                 alt: 'Social Media Mockup'
             },
             {
@@ -98,8 +98,8 @@ export const projects = [
             {
                 type: 'image-grid',
                 images: [
-                    '/src/assets/work/mamamangos/package-design.jpg',
-                    '/src/assets/work/mamamangos/group-14.png'
+                    '/work/mamamangos/package-design.jpg',
+                    '/work/mamamangos/group-14.png'
                 ]
             },
             {
@@ -110,15 +110,15 @@ export const projects = [
             {
                 type: 'image-grid',
                 images: [
-                    '/src/assets/work/mamamangos/recipes-1.jpg',
-                    '/src/assets/work/mamamangos/upscale-media.jpg',
-                    '/src/assets/work/mamamangos/gala.jpg',
-                    '/src/assets/work/mamamangos/resize-01.png',
-                    '/src/assets/work/mamamangos/resize-08.png',
-                    '/src/assets/work/mamamangos/resize-03.png',
-                    '/src/assets/work/mamamangos/brand.jpg',
-                    '/src/assets/work/mamamangos/resize-07.png',
-                    '/src/assets/work/mamamangos/resize-02.png'
+                    '/work/mamamangos/recipes-1.jpg',
+                    '/work/mamamangos/upscale-media.jpg',
+                    '/work/mamamangos/gala.jpg',
+                    '/work/mamamangos/resize-01.png',
+                    '/work/mamamangos/resize-08.png',
+                    '/work/mamamangos/resize-03.png',
+                    '/work/mamamangos/brand.jpg',
+                    '/work/mamamangos/resize-07.png',
+                    '/work/mamamangos/resize-02.png'
                 ]
             },
             {
@@ -128,7 +128,7 @@ export const projects = [
             },
             {
                 type: 'image-full',
-                src: '/src/assets/work/mamamangos/screencapture-home.png',
+                src: '/work/mamamangos/screencapture-home.png',
                 alt: 'Website Home'
             },
             {
