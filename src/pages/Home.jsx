@@ -15,8 +15,8 @@ const Home = () => {
             transition={{ duration: 0.5 }}
         >
             <Helmet>
-                <title>Jenna Eve | Visual Designer</title>
-                <meta name="description" content="Portfolio of Jenna Eve, a Visual Designer specializing in branding, web design, and art direction." />
+                <title>Jenna Eve | Graphic Designer</title>
+                <meta name="description" content="Portfolio of Jenna Eve, a Graphic Designer and Digital Marketer." />
             </Helmet>
 
             <section className="hero container">
@@ -27,13 +27,14 @@ const Home = () => {
                     transition={{ duration: 0.6, ease: "easeOut" }}
                 >
                     <h1 className="hero-title">
-                        hi! i'm jenna <span className="star-icon">✦</span>
+                        hi! i'm jenna eve <span className="star-icon">✦</span>
                     </h1>
                     <div className="hero-bio-container">
                         <p className="hero-bio">
-                            visual designer <span className="serif-italic">based in the us</span>
-                            <span className="flower-icon"> ✿ </span> crafting experiences that
-                            <span className="highlight"> connect</span> & <span className="highlight">uplift</span>.
+                            graphic designer + digital marketer
+                        </p>
+                        <p className="hero-tagline">
+                            <span className="highlight">Big ideas bloom from the tiniest details.</span> ˚✿｡˚
                         </p>
                     </div>
                 </motion.div>

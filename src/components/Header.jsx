@@ -11,7 +11,7 @@ const Header = () => {
                 </div>
                 <div className="logo-text">
                     <span className="logo-name">Jenna Eve</span>
-                    <span className="logo-role">UX + VISUAL DESIGNER ⌘ ⊹</span>
+                    <span className="logo-role">GRAPHIC DESIGNER ⌘ ⊹</span>
                 </div>
             </Link>
         </header>
