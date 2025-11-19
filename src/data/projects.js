@@ -8,18 +8,135 @@ export const projects = [
         year: "2024",
         role: "Brand Identity, Web Design",
         client: "Mama Mango's Bakery",
-        image: "https://placehold.co/1200x800/EEE/31343C?text=Mama+Mango%27s+Cover",
+        image: "/src/assets/work/mamamangos/brand-cover.jpg",
         link: "/work/mamamangos",
         details: {
-            content: [
-                "Mama Mango's is a family-owned bakery that wanted to modernize their brand while keeping the warmth and tradition of their roots. We created a playful yet sophisticated identity that appeals to both long-time customers and new visitors.",
-                "The web design focuses on showcasing their delicious pastries with high-quality photography and a warm color palette that evokes the feeling of a fresh-baked morning."
-            ],
-            gallery: [
-                "https://placehold.co/800x600/EEE/31343C?text=Mama+Mango+1",
-                "https://placehold.co/800x600/EEE/31343C?text=Mama+Mango+2"
-            ]
-        }
+            content: [], // Kept for compatibility, but empty as we use sections
+            gallery: []  // Kept for compatibility
+        },
+        hideHero: true,
+        sections: [
+            {
+                type: 'text',
+                title: 'Overview',
+                content: "Mama Mango’s Bakery is a capstone project close to my heart. It is a collaboration between my significant other, Nick Mangubat, and me, created in honor of his late mother, Donna Mangubat. As his biggest supporter, she encouraged his dreams and once told him that his croissants were better than any bakery’s. That simple, heartfelt praise became the spark for something bigger. Together, we are turning her words into a warm, welcoming brand where her memory lives on through his craft and my design."
+            },
+            {
+                type: 'grid-2',
+                items: [
+                    { title: 'Service', content: 'Web Design, Package Design, UI/UX Design' },
+                    { title: 'Software', content: 'Webflow, Adobe Illustrator, Adobe Photoshop, Adobe Premier Pro' }
+                ]
+            },
+            {
+                type: 'grid-2',
+                items: [
+                    { title: 'Problem', content: 'Many small bakeries struggle to stand out in a crowded market due to a lack of tools to share their unique stories and connect emotionally with customers, often missing out on the benefits of a strong online presence.' },
+                    { title: 'Solution', content: 'We are designing an identity for the bakery and a website that goes beyond just selling pastries, it tells a story, creates an emotional connection, and provides a seamless customer experience.' }
+                ]
+            },
+            {
+                type: 'image-full',
+                src: '/src/assets/work/mamamangos/screencapture-about.png',
+                alt: 'Mama Mangos About Page'
+            },
+            {
+                type: 'image-full',
+                src: '/src/assets/work/mamamangos/iphone-blue.png',
+                alt: 'Mobile View'
+            },
+            {
+                type: 'text',
+                title: 'Research & Data',
+                content: "Rooted in warmth and simplicity, Mama Mango’s branding blends soft orange tones, cozy tans, and rich browns to create a space that feels both modern and nurturing. The clean, sleek design is elevated by subtle, earthy warmth, inviting guests into an environment that’s as comforting as a homemade pastry. This warm palette and minimal aesthetic reflect the heart of Mama Mango’s: a bakery where tradition meets thoughtful design."
+            },
+            {
+                type: 'image-grid',
+                images: [
+                    '/src/assets/work/mamamangos/mamamangos-logo.png',
+                    '/src/assets/work/mamamangos/img-6837.jpg',
+                    '/src/assets/work/mamamangos/resize-05.png'
+                ]
+            },
+            {
+                type: 'text',
+                title: 'Brand Identity',
+                content: "Designing a brand identity for Mama Mango’s involves crafting a cohesive visual language that connects seamlessly across the website, social media, packaging, and menu. Rooted in warmth and simplicity, the brand blends nostalgic charm with a clean, modern aesthetic, inviting customers into a heartfelt experience whether they’re browsing online or unwrapping a fresh pastry. The goal is to create a space that feels both personal and polished, appealing to a community that values comfort, quality, and thoughtful design."
+            },
+            {
+                type: 'image-full',
+                src: '/src/assets/work/mamamangos/bakery-interior.jpg',
+                alt: 'Bakery Interior'
+            },
+            {
+                type: 'text',
+                title: 'Logo Design',
+                content: "The Mama Mango’s logo was inspired by the handwriting of Mama Donna, the heart behind the bakery. Her original script was traced and carefully refined to maintain its natural charm while enhancing readability and versatility. The result is a logo that feels personal and warm, capturing Donna’s presence in every curve and stroke, and preserving the authenticity at the core of the brand."
+            },
+            {
+                type: 'image-grid',
+                images: [
+                    '/src/assets/work/mamamangos/screencapture-contact.png',
+                    '/src/assets/work/mamamangos/untitled-3.png'
+                ]
+            },
+            {
+                type: 'text',
+                title: 'Social Media',
+                content: "Social media is an essential part of Mama Mango’s, offering a window into the heart of the bakery. Rather than polished, curated posts, the content highlights raw, unfiltered moments, flour-dusted counters, golden pastries fresh from the oven, and behind-the-scenes baking shots. This approach creates a friendly, approachable feel that invites customers to connect with the process, the people, and the warmth behind every treat."
+            },
+            {
+                type: 'image-full',
+                src: '/src/assets/work/mamamangos/social-media-mockup.png',
+                alt: 'Social Media Mockup'
+            },
+            {
+                type: 'text',
+                title: 'Package Design',
+                content: "The product and print designs are crafted to reflect the bakery’s warm, homey character. Each piece features delicate pastry line work and incorporates the brand’s signature orange and tan tones, creating a sense of consistency and comfort. The main logo is prominently displayed on the front, tying every design element back to the heart of the brand and enhancing the inviting, handcrafted feel of the overall identity."
+            },
+            {
+                type: 'image-grid',
+                images: [
+                    '/src/assets/work/mamamangos/package-design.jpg',
+                    '/src/assets/work/mamamangos/group-14.png'
+                ]
+            },
+            {
+                type: 'text',
+                title: 'Photography',
+                content: "I took the photography for the bakery website to showcase the authentic, handcrafted look of the baked goods Nick baked and create a genuine connection with customers. To enhance their visual appeal, I edited the photos to align with the brand’s bright orange theme, making the treats look even more inviting and delicious. This combination of authenticity and vibrant color helps create an atmosphere that encourages customers to crave what they see."
+            },
+            {
+                type: 'image-grid',
+                images: [
+                    '/src/assets/work/mamamangos/recipes-1.jpg',
+                    '/src/assets/work/mamamangos/upscale-media.jpg',
+                    '/src/assets/work/mamamangos/gala.jpg',
+                    '/src/assets/work/mamamangos/resize-01.png',
+                    '/src/assets/work/mamamangos/resize-08.png',
+                    '/src/assets/work/mamamangos/resize-03.png',
+                    '/src/assets/work/mamamangos/brand.jpg',
+                    '/src/assets/work/mamamangos/resize-07.png',
+                    '/src/assets/work/mamamangos/resize-02.png'
+                ]
+            },
+            {
+                type: 'text',
+                title: 'Mama Mango’s - Online',
+                content: "We created a live website, MamaMangosBakery.com, to give the bakery a strong digital presence that reflects its warmth and story. The goal was to make it easy for customers to browse, connect, and shop, whether they’re discovering the bakery for the first time or returning for a favorite treat. The site is designed with clean navigation, clear categories for pastries, and a simple checkout process, so users can quickly find what they’re looking for and place an order without confusion. It balances storytelling with function, making the online experience feel as welcoming and thoughtful as the bakery itself."
+            },
+            {
+                type: 'image-full',
+                src: '/src/assets/work/mamamangos/screencapture-home.png',
+                alt: 'Website Home'
+            },
+            {
+                type: 'text',
+                title: 'Takeaways',
+                content: "Mama Mango’s is more than a bakery, it’s a tribute, a memory, and a shared dream brought to life through design. Rooted in love and legacy, the brand honors a mother’s encouragement and transforms it into a warm, tangible space for others to experience. Through a thoughtfully crafted identity and story-driven website, Mama Mango’s bridges heartfelt tradition with modern connection. By focusing on emotional storytelling, accessible design, and an inviting visual presence, the project shows how small bakeries can stand out not just by what they sell but by what they represent. In every pastry, post, and page, Mama Mango’s keeps her spirit alive and welcomes others into something truly personal."
+            }
+        ]
     },
     {
         id: 2,

@@ -48,15 +48,17 @@ const ProjectDetail = () => {
                 <h1 className="detail-title">{project.title}</h1>
             </div>
 
-            <div className="detail-cover">
-                <motion.img
-                    src={project.image}
-                    alt={project.title}
-                    initial={{ scale: 1.1 }}
-                    animate={{ scale: 1 }}
-                    transition={{ duration: 1.5, ease: "easeOut" }}
-                />
-            </div>
+            {!project.hideHero && (
+                <div className="detail-cover">
+                    <motion.img
+                        src={project.image}
+                        alt={project.title}
+                        initial={{ scale: 1.1 }}
+                        animate={{ scale: 1 }}
+                        transition={{ duration: 1.5, ease: "easeOut" }}
+                    />
+                </div>
+            )}
 
             <div className="detail-content-grid">
                 <aside className="detail-info">
@@ -75,17 +77,62 @@ const ProjectDetail = () => {
                 </aside>
 
                 <div className="detail-body">
-                    {project.details?.content.map((paragraph, index) => (
-                        <p key={index}>{paragraph}</p>
-                    ))}
+                    {project.sections ? (
+                        <div className="project-sections">
+                            {project.sections.map((section, index) => {
+                                switch (section.type) {
+                                    case 'text':
+                                        return (
+                                            <div key={index} className="section-text">
+                                                {section.title && <h3>{section.title}</h3>}
+                                                <p>{section.content}</p>
+                                            </div>
+                                        );
+                                    case 'image-full':
+                                        return (
+                                            <div key={index} className="section-image-full">
+                                                <img src={section.src} alt={section.alt} />
+                                            </div>
+                                        );
+                                    case 'grid-2':
+                                        return (
+                                            <div key={index} className="section-grid-2">
+                                                {section.items.map((item, i) => (
+                                                    <div key={i} className="grid-item">
+                                                        <h3>{item.title}</h3>
+                                                        <p>{item.content}</p>
+                                                    </div>
+                                                ))}
+                                            </div>
+                                        );
+                                    case 'image-grid':
+                                        return (
+                                            <div key={index} className="section-image-grid">
+                                                {section.images.map((img, i) => (
+                                                    <img key={i} src={img} alt={`Gallery ${i}`} />
+                                                ))}
+                                            </div>
+                                        );
+                                    default:
+                                        return null;
+                                }
+                            })}
+                        </div>
+                    ) : (
+                        <>
+                            {project.details?.content.map((paragraph, index) => (
+                                <p key={index}>{paragraph}</p>
+                            ))}
 
-                    <div className="detail-gallery">
-                        {project.details?.gallery.map((img, index) => (
-                            <div className="gallery-image" key={index}>
-                                <img src={img} alt={`${project.title} detail ${index + 1}`} />
+                            <div className="detail-gallery">
+                                {project.details?.gallery.map((img, index) => (
+                                    <div className="gallery-image" key={index}>
+                                        <img src={img} alt={`${project.title} detail ${index + 1}`} />
+                                    </div>
+                                ))}
                             </div>
-                        ))}
-                    </div>
+                        </>
+                    )}
                 </div>
             </div>
 

@@ -36,16 +36,17 @@
     transform: translate(2px, -2px);
 }
 
-/* Dark mode adjustment if needed, though pink on dark usually looks good */
+/* Dark mode adjustment - keeping it timid */
 body.dark-mode .resume-button {
-    background-color: #ff1493; /* DeepPink */
-    box-shadow: 0 4px 15px rgba(255, 20, 147, 0.4);
+    background-color: rgba(255, 105, 180, 0.05); /* Even more subtle bg */
+    color: #ff69b4; /* Keep star pink */
+    border-color: rgba(255, 105, 180, 0.2);
+    box-shadow: none;
 }
 
 body.dark-mode .resume-button:hover {
-    background-color: transparent;
-    color: #ff1493;
-    border-color: #ff1493;
+    background-color: rgba(255, 105, 180, 0.15);
+    box-shadow: 0 4px 12px rgba(255, 105, 180, 0.1);
 }
 
 @media (max-width: 768px) {
