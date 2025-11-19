@@ -8,7 +8,6 @@ const FloatingDock = () => {
 
     const links = [
         { path: '/', label: 'HOME' },
-        { path: '/', label: 'WORK', hash: '#work' }, // Using hash for scrolling if on same page
         { path: '/about', label: 'ABOUT' },
         { path: '/contact', label: 'CONTACT' }
     ];
@@ -17,7 +16,7 @@ const FloatingDock = () => {
         <div className="dock-container">
             <motion.div
                 className="dock"
-                initial={{ y: 100, opacity: 0 }}
+                initial={{ y: -100, opacity: 0 }}
                 animate={{ y: 0, opacity: 1 }}
                 transition={{ delay: 0.5, duration: 0.5 }}
             >
