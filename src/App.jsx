@@ -4,6 +4,7 @@ import Header from './components/Header';
 import FloatingDock from './components/FloatingDock';
 import CustomCursor from './components/CustomCursor';
 import ThemeToggle from './components/ThemeToggle';
+import ResumeButton from './components/ResumeButton';
 import Home from './pages/Home';
 import About from './pages/About';
 import Contact from './pages/Contact';
@@ -50,6 +51,7 @@ function App() {
       <CustomCursor />
       <Header />
       <ThemeToggle />
+      <ResumeButton />
       <FloatingDock />
       <AnimatePresence mode="wait">
         <Routes location={location} key={location.pathname}>

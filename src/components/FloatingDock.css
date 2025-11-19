@@ -7,60 +7,81 @@
 }
 
 .dock {
-    background: rgba(235, 235, 235, 0.8);
-    backdrop-filter: blur(10px);
+    /* Light Mode: Soft Pink Glass */
+    background: rgba(255, 240, 245, 0.85); /* LavenderBlush */
+    backdrop-filter: blur(12px);
     padding: 0.5rem;
-    border-radius: 12px;
+    border-radius: 50px; /* More rounded for a pill shape */
     display: flex;
     gap: 0.5rem;
-    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
-    border: 1px solid rgba(255, 255, 255, 0.5);
-    transition: background-color 0.3s ease, border-color 0.3s ease;
+    box-shadow: 0 8px 32px rgba(255, 105, 180, 0.15); /* Pink shadow */
+    border: 1px solid rgba(255, 182, 193, 0.6); /* LightPink border */
+    transition: all 0.3s ease;
 }
 
 body.dark-mode .dock {
-    background: rgba(30, 30, 30, 0.8);
-    border-color: rgba(255, 255, 255, 0.1);
-    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+    /* Dark Mode: Deep Pink Glass */
+    background: rgba(50, 10, 30, 0.8);
+    border-color: rgba(255, 20, 147, 0.3); /* DeepPink border */
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.4);
 }
 
 .dock-item {
-    padding: 0.75rem 1.5rem;
+    padding: 0.75rem 1.75rem;
     font-family: var(--font-sans);
-    font-size: 0.85rem;
-    font-weight: 500;
-    color: var(--color-text-light);
+    font-size: 0.9rem;
+    font-weight: 600;
+    color: #c71585; /* MediumVioletRed - darker pink for text */
     text-decoration: none;
-    border-radius: 8px;
-    transition: all 0.2s ease;
+    border-radius: 30px;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
     letter-spacing: 0.05em;
+    position: relative;
+    overflow: hidden;
 }
 
+/* Light Mode Hover */
 .dock-item:hover {
-    background: rgba(255, 255, 255, 0.8);
-    color: var(--color-text);
+    background: rgba(255, 192, 203, 0.4); /* Pink hover */
+    color: #db7093; /* PaleVioletRed */
+    transform: translateY(-1px);
+}
+
+/* Dark Mode Item Styles */
+body.dark-mode .dock-item {
+    color: #ffb6c1; /* LightPink text */
 }
 
 body.dark-mode .dock-item:hover {
-    background: rgba(255, 255, 255, 0.1);
-    color: var(--color-text);
+    background: rgba(255, 20, 147, 0.2);
+    color: #ff69b4; /* HotPink */
 }
 
+/* Active State - The "Pop" */
 .dock-item.active {
-    background: #fff;
-    color: var(--color-text);
-    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+    background: #ff69b4; /* HotPink */
+    color: #fff;
+    box-shadow: 0 4px 15px rgba(255, 105, 180, 0.4);
 }
 
 body.dark-mode .dock-item.active {
-    background: #333;
+    background: #ff1493; /* DeepPink */
     color: #fff;
-    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+    box-shadow: 0 4px 15px rgba(255, 20, 147, 0.5);
 }
 
 @media (max-width: 768px) {
     .dock-container {
         top: 1.5rem;
         width: auto;
+    }
+    
+    .dock {
+        padding: 0.4rem;
+    }
+    
+    .dock-item {
+        padding: 0.6rem 1.2rem;
+        font-size: 0.8rem;
     }
 }

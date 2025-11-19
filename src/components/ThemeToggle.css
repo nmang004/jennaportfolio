@@ -1,6 +1,6 @@
 .theme-toggle {
     position: fixed;
-    top: 2rem;
+    bottom: 2rem;
     right: 2rem;
     width: 40px;
     height: 40px;
@@ -19,7 +19,8 @@
 
 @media (max-width: 768px) {
     .theme-toggle {
-        top: 1.5rem;
+        bottom: 1.5rem;
         right: 1.5rem;
+        top: auto; /* Reset top */
     }
 }
