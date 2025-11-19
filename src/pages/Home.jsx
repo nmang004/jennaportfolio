@@ -1,5 +1,6 @@
 import React from 'react';
 import { motion } from 'framer-motion';
+import { Helmet } from 'react-helmet-async';
 import ProjectCard from '../components/ProjectCard';
 import { projects } from '../data/projects';
 import './Home.css';
@@ -13,6 +14,11 @@ const Home = () => {
             exit={{ opacity: 0 }}
             transition={{ duration: 0.5 }}
         >
+            <Helmet>
+                <title>Jenna Eve | Visual Designer</title>
+                <meta name="description" content="Portfolio of Jenna Eve, a Visual Designer specializing in branding, web design, and art direction." />
+            </Helmet>
+
             <section className="hero container">
                 <motion.div
                     className="hero-content"

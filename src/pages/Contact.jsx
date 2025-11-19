@@ -1,5 +1,6 @@
 import React from 'react';
 import { motion } from 'framer-motion';
+import { Helmet } from 'react-helmet-async';
 import './Contact.css';
 
 const Contact = () => {
@@ -17,6 +18,11 @@ const Contact = () => {
             exit={{ opacity: 0 }}
             transition={{ duration: 0.5 }}
         >
+            <Helmet>
+                <title>Contact | Jenna Eve</title>
+                <meta name="description" content="Get in touch with Jenna Eve for collaborations and inquiries." />
+            </Helmet>
+
             <div className="contact-container">
                 <motion.div
                     className="contact-header"

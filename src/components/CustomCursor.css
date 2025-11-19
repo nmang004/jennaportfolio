@@ -1,14 +1,20 @@
 .cursor {
+    position: fixed;
+    top: 0;
+    left: 0;
     width: 20px;
     height: 20px;
-    border: 2px solid var(--color-text);
+    border: 1px solid #000;
     border-radius: 50%;
-    position: fixed;
-    transform: translate(-50%, -50%);
     pointer-events: none;
     z-index: 9999;
-    transition: width 0.2s, height 0.2s, background-color 0.2s, border-color 0.2s;
+    transform: translate(-50%, -50%);
+    transition: width 0.3s ease, height 0.3s ease, background-color 0.3s ease, transform 0.1s ease-out;
     mix-blend-mode: difference;
+    background-color: transparent;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 .cursor--hidden {
@@ -16,16 +22,40 @@
 }
 
 .cursor--clicked {
-    transform: translate(-50%, -50%) scale(0.9);
-    background-color: var(--color-text);
+    transform: translate(-50%, -50%) scale(0.8);
+    background-color: #fff;
 }
 
 .cursor--link-hovered {
-    width: 40px;
-    height: 40px;
-    background-color: rgba(255, 255, 255, 0.1);
+    width: 50px;
+    height: 50px;
+    background-color: #fff;
     border-color: transparent;
-    backdrop-filter: invert(1);
+    mix-blend-mode: difference;
+}
+
+.cursor--text-mode {
+    width: 80px;
+    height: 80px;
+    background-color: #fff;
+    mix-blend-mode: difference;
+}
+
+.cursor-text {
+    font-family: 'Inter', sans-serif;
+    font-size: 12px;
+    font-weight: 600;
+    color: #000;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.cursor--text-mode .cursor-text {
+    opacity: 1;
+}
+
+body.dark-mode .cursor {
+    border-color: #fff;
 }
 
 @media (max-width: 768px) {

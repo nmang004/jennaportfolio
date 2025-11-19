@@ -6,6 +6,7 @@ const CustomCursor = () => {
     const [hidden, setHidden] = useState(false);
     const [clicked, setClicked] = useState(false);
     const [linkHovered, setLinkHovered] = useState(false);
+    const [cursorText, setCursorText] = useState("");
 
     useEffect(() => {
         const addEventListeners = () => {
@@ -45,18 +46,35 @@ const CustomCursor = () => {
         };
 
         const handleLinkHoverEvents = () => {
-            document.querySelectorAll("a, button, .project-card").forEach((el) => {
+            document.querySelectorAll("a, button, .dock-item").forEach((el) => {
                 el.addEventListener("mouseover", () => setLinkHovered(true));
                 el.addEventListener("mouseout", () => setLinkHovered(false));
+            });
+
+            document.querySelectorAll(".project-card").forEach((el) => {
+                el.addEventListener("mouseover", () => {
+                    setLinkHovered(true);
+                    setCursorText("VIEW");
+                });
+                el.addEventListener("mouseout", () => {
+                    setLinkHovered(false);
+                    setCursorText("");
+                });
             });
         };
 
         addEventListeners();
         handleLinkHoverEvents();
+
+        // Re-attach listeners on route change or DOM updates if needed
+        // For now, we might need a MutationObserver or just re-run on location change
+        // But since this is global, we'll keep it simple. 
+        // Ideally, use a context or a custom hook for cleaner integration.
+
         return () => removeEventListeners();
     }, []);
 
-    const cursorClasses = `cursor ${hidden ? "cursor--hidden" : ""} ${clicked ? "cursor--clicked" : ""} ${linkHovered ? "cursor--link-hovered" : ""}`;
+    const cursorClasses = `cursor ${hidden ? "cursor--hidden" : ""} ${clicked ? "cursor--clicked" : ""} ${linkHovered ? "cursor--link-hovered" : ""} ${cursorText ? "cursor--text-mode" : ""}`;
 
     return (
         <div
@@ -65,7 +83,9 @@ const CustomCursor = () => {
                 left: `${position.x}px`,
                 top: `${position.y}px`
             }}
-        />
+        >
+            <span className="cursor-text">{cursorText}</span>
+        </div>
     );
 };
 

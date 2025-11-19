@@ -1,5 +1,6 @@
 import React from 'react';
 import { motion } from 'framer-motion';
+import { Helmet } from 'react-helmet-async';
 import './About.css';
 
 const About = () => {
@@ -25,6 +26,11 @@ const About = () => {
             exit={{ opacity: 0 }}
             transition={{ duration: 0.5 }}
         >
+            <Helmet>
+                <title>About | Jenna Eve</title>
+                <meta name="description" content="Learn more about Jenna Eve, her background, services, and experience." />
+            </Helmet>
+
             <div className="about-container">
                 <section className="about-hero">
                     <motion.h1

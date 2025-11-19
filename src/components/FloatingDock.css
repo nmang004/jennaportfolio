@@ -14,6 +14,13 @@
     gap: 0.5rem;
     box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
     border: 1px solid rgba(255, 255, 255, 0.5);
+    transition: background-color 0.3s ease, border-color 0.3s ease;
+}
+
+body.dark-mode .dock {
+    background: rgba(30, 30, 30, 0.8);
+    border-color: rgba(255, 255, 255, 0.1);
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
 }
 
 .dock-item {
@@ -33,10 +40,21 @@
     color: var(--color-text);
 }
 
+body.dark-mode .dock-item:hover {
+    background: rgba(255, 255, 255, 0.1);
+    color: var(--color-text);
+}
+
 .dock-item.active {
     background: #fff;
     color: var(--color-text);
     box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+}
+
+body.dark-mode .dock-item.active {
+    background: #333;
+    color: #fff;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
 }
 
 @media (max-width: 768px) {

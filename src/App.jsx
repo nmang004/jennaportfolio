@@ -3,9 +3,13 @@ import { Routes, Route } from 'react-router-dom';
 import Header from './components/Header';
 import FloatingDock from './components/FloatingDock';
 import CustomCursor from './components/CustomCursor';
+import ThemeToggle from './components/ThemeToggle';
 import Home from './pages/Home';
 import About from './pages/About';
 import Contact from './pages/Contact';
+import ProjectDetail from './pages/ProjectDetail';
+import Playground from './pages/Playground';
+import NotFound from './pages/NotFound';
 import Footer from './components/Footer';
 
 import { AnimatePresence } from 'framer-motion';
@@ -45,16 +49,20 @@ function App() {
     <div className="App">
       <CustomCursor />
       <Header />
+      <ThemeToggle />
       <FloatingDock />
       <AnimatePresence mode="wait">
         <Routes location={location} key={location.pathname}>
           <Route path="/" element={<Home />} />
           <Route path="/about" element={<About />} />
           <Route path="/contact" element={<Contact />} />
+          <Route path="/work/:slug" element={<ProjectDetail />} />
+          <Route path="/playground" element={<Playground />} />
+          <Route path="*" element={<NotFound />} />
         </Routes>
       </AnimatePresence>
       <Footer />
-    </div>
+    </div >
   );
 }
 

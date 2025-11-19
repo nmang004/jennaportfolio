@@ -1,26 +1,32 @@
 :root {
   /* Colors */
-  --color-bg: #fcfcfc;
+  --bg-color: #f4f4f0;
+  --text-color: #1a1a1a;
   --color-text: #1a1a1a;
-  --color-text-light: #555;
-  --color-accent: #d4a373;
-  --color-accent-green: #e9edc9;
-  --color-border: #e5e5e5;
+  --color-text-light: #666;
+  --color-accent: #ff4d00;
+  --color-accent-green: #00a651;
 
   /* Typography */
   --font-sans: 'Inter', sans-serif;
   --font-serif: 'Noto Serif', serif;
 
   /* Spacing */
-  --spacing-xs: 0.5rem;
   --spacing-sm: 1rem;
   --spacing-md: 2rem;
   --spacing-lg: 4rem;
   --spacing-xl: 8rem;
 
   /* Transitions */
-  --transition-fast: 0.2s ease;
   --transition-medium: 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+body.dark-mode {
+  --bg-color: #1a1a1a;
+  --text-color: #f4f4f0;
+  --color-text: #f4f4f0;
+  --color-text-light: #aaa;
+  --color-accent: #ff6b3d;
 }
 
 * {
@@ -31,8 +37,8 @@
 
 body {
   font-family: var(--font-sans);
-  background-color: var(--color-bg);
-  color: var(--color-text);
+  background-color: var(--bg-color);
+  color: var(--text-color);
   line-height: 1.6;
   -webkit-font-smoothing: antialiased;
   position: relative;

@@ -92,16 +92,26 @@
     text-decoration: none;
     color: var(--color-text);
     padding: 1.5rem;
-    border: 1px solid #f0f0f0;
+    border: 1px solid rgba(0, 0, 0, 0.05);
     border-radius: 12px;
     transition: all 0.3s ease;
-    background: #fcfcfc;
+    background: var(--bg-color);
+}
+
+body.dark-mode .social-item {
+    background: #222;
+    border-color: rgba(255, 255, 255, 0.1);
 }
 
 .social-item:hover {
     transform: translateY(-5px);
     box-shadow: 0 10px 20px rgba(0, 0, 0, 0.03);
-    border-color: #e5e5e5;
+    border-color: var(--color-accent);
+}
+
+body.dark-mode .social-item:hover {
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+    border-color: var(--color-accent);
 }
 
 .social-name {

@@ -7,23 +7,34 @@
     display: grid;
     grid-template-columns: 1.2fr 1.8fr;
     /* More space for image */
-    background: #fcfcfc;
-    /* Very light, almost white background */
-    border: 1px solid #f0f0f0;
+    background: var(--bg-color);
+    /* Use theme background */
+    border: 1px solid rgba(0, 0, 0, 0.05);
     /* Subtle border */
     border-radius: 24px;
     overflow: hidden;
-    transition: transform 0.4s cubic-bezier(0.22, 1, 0.36, 1), box-shadow 0.4s ease;
+    transition: transform 0.4s cubic-bezier(0.22, 1, 0.36, 1), box-shadow 0.4s ease, background-color 0.3s ease, border-color 0.3s ease;
     text-decoration: none;
     color: inherit;
     min-height: 500px;
     /* Taller cards */
 }
 
+body.dark-mode .card-inner {
+    border-color: rgba(255, 255, 255, 0.1);
+    background-color: #222;
+    /* Slightly lighter than bg */
+}
+
 .project-card:hover .card-inner {
     transform: translateY(-4px);
     box-shadow: 0 20px 40px rgba(0, 0, 0, 0.03);
     border-color: #e5e5e5;
+}
+
+body.dark-mode .project-card:hover .card-inner {
+    border-color: rgba(255, 255, 255, 0.2);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
 }
 
 .card-content {
@@ -41,13 +52,13 @@
     font-weight: 400;
     margin-bottom: 1.5rem;
     line-height: 1.1;
-    color: #2a2a2a;
+    color: var(--color-text);
 }
 
 .card-description {
     font-family: var(--font-sans);
     font-size: 1.25rem;
-    color: #666;
+    color: var(--color-text-light);
     line-height: 1.5;
     max-width: 90%;
     font-weight: 300;
@@ -58,7 +69,7 @@
     font-size: 0.85rem;
     letter-spacing: 0.15em;
     text-transform: uppercase;
-    color: #999;
+    color: var(--color-text-light);
     font-weight: 500;
     display: flex;
     gap: 0.5rem;
@@ -123,7 +134,11 @@
         padding: 3rem 3rem 0;
         order: 1;
         min-height: 300px;
-        background: #fcfcfc;
+        background: var(--bg-color);
+    }
+
+    body.dark-mode .card-image-wrapper {
+        background: #222;
     }
 
     .card-title {
