@@ -1,11 +1,10 @@
 .resume-button {
-    position: fixed;
-    top: 2rem;
-    right: 2rem;
-    z-index: 1000;
+    /* Position handled by TopRightNav */
     padding: 0.75rem 1.5rem;
-    background-color: rgba(255, 105, 180, 0.1); /* Timid pink background */
-    color: #ff69b4; /* Star pink text */
+    background-color: rgba(255, 105, 180, 0.1);
+    /* Timid pink background */
+    color: #ff69b4;
+    /* Star pink text */
     font-family: var(--font-sans);
     font-weight: 600;
     text-decoration: none;
@@ -38,8 +37,10 @@
 
 /* Dark mode adjustment - keeping it timid */
 body.dark-mode .resume-button {
-    background-color: rgba(255, 105, 180, 0.05); /* Even more subtle bg */
-    color: #ff69b4; /* Keep star pink */
+    background-color: rgba(255, 105, 180, 0.05);
+    /* Even more subtle bg */
+    color: #ff69b4;
+    /* Keep star pink */
     border-color: rgba(255, 105, 180, 0.2);
     box-shadow: none;
 }
@@ -51,8 +52,7 @@ body.dark-mode .resume-button:hover {
 
 @media (max-width: 768px) {
     .resume-button {
-        top: 1.5rem;
-        right: 1.5rem;
+        /* Position handled by TopRightNav */
         padding: 0.6rem 1.2rem;
         font-size: 0.8rem;
     }
