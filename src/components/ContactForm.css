@@ -8,7 +8,7 @@
     font-family: var(--font-serif);
     font-style: italic;
     font-size: 3rem;
-    color: #ff9eb5;
+    color: #ff69b4;
     /* Pinkish color from the image */
     text-align: left;
     margin-bottom: 3rem;
@@ -84,7 +84,7 @@ textarea {
 
 .submit-btn {
     align-self: flex-start;
-    background-color: #d64d7d;
+    background-color: #ff69b4;
     /* Darker pink from image button */
     color: white;
     border: none;
