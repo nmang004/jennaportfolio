@@ -41,7 +41,8 @@ body.dark-mode .dock {
 
 /* Light Mode Hover */
 .dock-item:hover {
-    background: rgba(255, 105, 180, 0.05); /* Extremely faint pink */
+    background: rgba(255, 105, 180, 0.05);
+    /* Extremely faint pink */
     color: #ff69b4;
 }
 
@@ -57,8 +58,10 @@ body.dark-mode .dock-item:hover {
 
 /* Active State - Timid "Pop" */
 .dock-item.active {
-    background: rgba(255, 105, 180, 0.1); /* Timid Pink Bg */
-    color: #ff69b4; /* Star Pink Text */
+    background: rgba(255, 105, 180, 0.1);
+    /* Timid Pink Bg */
+    color: #ff69b4;
+    /* Star Pink Text */
     font-weight: 600;
 }
 
@@ -70,22 +73,28 @@ body.dark-mode .dock-item.active {
 
 @media (max-width: 768px) {
     .dock-container {
-        top: 1rem;
-        width: 90%; /* Prevent touching edges */
-        max-width: 400px; /* reasonable max width */
+        top: auto;
+        bottom: 2rem;
+        width: 90%;
+        /* Prevent touching edges */
+        max-width: 400px;
+        /* reasonable max width */
         display: flex;
         justify-content: center;
     }
-    
+
     .dock {
         padding: 0.3rem;
         width: 100%;
-        justify-content: space-between; /* Distribute items evenly */
+        justify-content: space-between;
+        /* Distribute items evenly */
     }
-    
+
     .dock-item {
-        padding: 0.6rem 0; /* Remove horizontal padding, rely on flex distribution or smaller fixed padding */
-        flex: 1; /* Make items equal width */
+        padding: 0.6rem 0;
+        /* Remove horizontal padding, rely on flex distribution or smaller fixed padding */
+        flex: 1;
+        /* Make items equal width */
         text-align: center;
         font-size: 0.75rem;
         white-space: nowrap;

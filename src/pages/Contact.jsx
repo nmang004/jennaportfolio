@@ -3,6 +3,8 @@ import { motion } from 'framer-motion';
 import { Helmet } from 'react-helmet-async';
 import './Contact.css';
 
+import ContactForm from '../components/ContactForm';
+
 const Contact = () => {
     const socialLinks = [
         { name: "LinkedIn", url: "https://linkedin.com", handle: "Jenna Eve" },
@@ -31,10 +33,10 @@ const Contact = () => {
                     transition={{ delay: 0.2 }}
                 >
                     <h1 className="contact-title">
-                        Let's create something <br /> <span className="serif-italic">together.</span>
+                        Let’s bring your <br /> <span className="serif-italic">vision to life.</span>
                     </h1>
                     <p className="contact-subtitle">
-                        I'm currently open to new projects and collaborations.
+                        I’m ready to help you tell your story through design.
                     </p>
                 </motion.div>
 
@@ -44,10 +46,7 @@ const Contact = () => {
                     animate={{ y: 0, opacity: 1 }}
                     transition={{ delay: 0.3 }}
                 >
-                    <a href="mailto:hello@jennaeve.com" className="email-link">
-                        hello@jennaeve.com
-                        <span className="arrow-icon">↗</span>
-                    </a>
+                    <ContactForm />
                 </motion.div>
 
                 <motion.div

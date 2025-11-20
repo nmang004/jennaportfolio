@@ -39,7 +39,7 @@ const About = () => {
                         animate={{ y: 0, opacity: 1 }}
                         transition={{ delay: 0.2 }}
                     >
-                        More than just <br /> <span className="serif-italic">pixels & code.</span>
+                        hi.
                     </motion.h1>
 
                     <motion.div
@@ -49,12 +49,13 @@ const About = () => {
                         transition={{ delay: 0.3 }}
                     >
                         <p>
-                            I'm Jenna, a visual designer based in the US. I believe that big ideas bloom from the tiniest details.
-                            My work is fueled by curiosity and a desire to create meaningful experiences that connect and uplift.
+                            My name is Jenna Eve and I am a graphic designer based in Virginia Beach, VA. I recently graduated from Old Dominion University with a degree in Graphic Design. I currently work for National Vascular Associates as a Digital Marketing Coordinator in Virginia Beach.
                         </p>
                         <p>
-                            When I'm not designing, you can find me exploring local coffee shops, tending to my plants ✿,
-                            or getting lost in a good book.
+                            My passion for graphic design ignited when I realized its power to transform ideas into meaningful connections. As I continue to evolve, I’m especially drawn to the intersection of design and technology, focusing on creating interfaces that are not only visually compelling but also intuitive, purposeful, and impactful.
+                        </p>
+                        <p>
+                            Outside of work, I’m either taking my dog on a totally “necessary” walk that just so happens to lead to a coffee shop for an iced matcha latte, convincing myself at 2AM that my room desperately needs a new layout… for the third time this month, or I end back up at my computer screen playing Minecraft until I notice it’s past my bed time.
                         </p>
                     </motion.div>
                 </section>
@@ -94,15 +95,7 @@ const About = () => {
                     </motion.section>
                 </div>
 
-                <motion.div
-                    className="about-image-container"
-                    initial={{ scale: 0.95, opacity: 0 }}
-                    whileInView={{ scale: 1, opacity: 1 }}
-                    viewport={{ once: true }}
-                    transition={{ duration: 0.6 }}
-                >
-                    <img src="https://placehold.co/1200x600/EEE/31343C?text=Jenna+Eve" alt="Jenna Eve Workspace" />
-                </motion.div>
+
             </div>
         </motion.div>
     );

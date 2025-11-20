@@ -19,8 +19,9 @@
 
 @media (max-width: 768px) {
     .theme-toggle {
-        bottom: 1.5rem;
+        bottom: 6rem;
         right: 1.5rem;
-        top: auto; /* Reset top */
+        top: auto;
+        /* Reset top */
     }
 }

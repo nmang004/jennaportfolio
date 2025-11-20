@@ -3,21 +3,29 @@
     min-height: 100vh;
 }
 
+@media (max-width: 768px) {
+    .about-page {
+        padding-top: 6rem;
+    }
+}
+
 .about-container {
     max-width: 1400px;
     margin: 0 auto;
     padding-left: 15%;
-    /* Align with Home page layout */
     padding-right: 2rem;
     padding-bottom: 8rem;
+    color: var(--color-text-light);
 }
 
 .about-title {
-    font-size: 4rem;
-    font-weight: 600;
-    line-height: 1.1;
-    margin-bottom: 3rem;
+    font-size: 8rem;
+    font-weight: 400;
+    line-height: 1;
     color: var(--color-text);
+    margin-bottom: 3rem;
+    font-family: var(--font-sans);
+    letter-spacing: -0.02em;
 }
 
 .about-bio {
@@ -25,7 +33,7 @@
     line-height: 1.6;
     max-width: 800px;
     color: var(--color-text-light);
-    margin-bottom: 6rem;
+    margin-bottom: 4rem;
 }
 
 .about-bio p {
@@ -36,7 +44,7 @@
     display: grid;
     grid-template-columns: 1fr 1fr;
     gap: 4rem;
-    margin-bottom: 6rem;
+    margin-bottom: 4rem;
 }
 
 .services-section h2,
@@ -82,18 +90,6 @@
     color: #999;
 }
 
-.about-image-container {
-    width: 100%;
-    border-radius: 24px;
-    overflow: hidden;
-}
-
-.about-image-container img {
-    width: 100%;
-    height: auto;
-    display: block;
-}
-
 @media (max-width: 1024px) {
     .about-container {
         padding-left: 2rem;
@@ -101,7 +97,7 @@
     }
 
     .about-title {
-        font-size: 3rem;
+        font-size: 6rem;
     }
 
     .about-grid {
@@ -111,6 +107,19 @@
 }
 
 @media (max-width: 768px) {
+    .about-bio {
+        margin-bottom: 3rem;
+    }
+
+    .about-title {
+        font-size: 4rem;
+    }
+
+    .about-grid {
+        gap: 2rem;
+        margin-bottom: 3rem;
+    }
+
     .experience-item {
         grid-template-columns: 1fr;
         gap: 0.25rem;
