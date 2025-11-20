@@ -1,167 +1,255 @@
 .about-page {
-    padding-top: 8rem;
+    padding-top: 120px;
+    padding-bottom: 80px;
     min-height: 100vh;
-}
-
-@media (max-width: 768px) {
-    .about-page {
-        padding-top: 6rem;
-    }
+    background-color: var(--bg-color);
+    color: var(--text-color);
 }
 
 .about-container {
-    max-width: 1400px;
+    max-width: 1200px;
     margin: 0 auto;
-    padding-left: 15%;
-    padding-right: 2rem;
-    padding-bottom: 8rem;
-    color: var(--color-text-light);
+    padding: 0 2rem;
 }
 
-.about-title {
-    font-size: 8rem;
-    font-weight: 400;
-    line-height: 1;
-    color: var(--color-text);
-    margin-bottom: 3rem;
-    font-family: var(--font-sans);
-    letter-spacing: -0.02em;
-}
-
-/* Layout Styles */
-.about-content {
-    display: grid;
-    grid-template-columns: 1fr 1.5fr;
-    /* Image takes less space than text */
-    gap: 4rem;
-    align-items: start;
+.about-hero {
     margin-bottom: 6rem;
 }
 
-.about-image {
-    width: 100%;
-    max-width: 400px;
-    /* Limit image width */
+.about-title {
+    font-family: 'Outfit', sans-serif;
+    font-size: 8rem;
+    font-weight: 300;
+    line-height: 1;
+    margin-bottom: 2rem;
+    color: #ff69b4;
+    letter-spacing: -0.02em;
+}
+
+.about-content {
+    display: grid;
+    grid-template-columns: 1fr 1.5fr;
+    gap: 3rem;
+    align-items: end;
 }
 
 .about-image img {
     width: 100%;
     height: auto;
-    display: block;
-    border-radius: 20px;
-    /* More noticeable curves */
-    object-fit: cover;
+    border-radius: 12px;
+    transition: transform 0.3s ease;
 }
 
-.about-bio {
-    font-size: 1.1rem;
-    /* Smaller font */
-    line-height: 1.6;
-    color: var(--color-text-light);
+.about-image img:hover {
+    transform: scale(1.02);
 }
 
 .about-bio p {
+    font-size: 1.05rem;
+    line-height: 1.6;
     margin-bottom: 1.5rem;
+    color: var(--text-secondary);
 }
 
-/* Other Sections */
+.about-bio p:last-child {
+    margin-bottom: 0;
+}
+
 .about-grid {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 4rem;
+    display: block;
     margin-bottom: 4rem;
 }
 
-.services-section h2,
-.experience-section h2 {
-    font-family: var(--font-serif);
-    font-size: 2rem;
-    font-weight: 400;
+.experience-section {
+    width: 100%;
+}
+
+.experience-section h2,
+.education-section h2 {
+    font-size: 0.9rem;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
     margin-bottom: 2rem;
-    border-bottom: 1px solid #e5e5e5;
-    padding-bottom: 1rem;
-}
-
-.services-section ul {
-    list-style: none;
-}
-
-.services-section li {
-    font-size: 1.2rem;
-    margin-bottom: 1rem;
-    color: var(--color-text);
-}
-
-.experience-item {
-    display: grid;
-    grid-template-columns: 1.5fr 1.5fr 1fr;
-    padding: 1rem 0;
-    border-bottom: 1px solid #f0f0f0;
-    font-size: 1.1rem;
-}
-
-.exp-role {
+    color: var(--text-secondary);
     font-weight: 500;
 }
 
+.experience-item {
+    border-top: 1px solid rgba(0, 0, 0, 0.1);
+    padding-top: 2rem;
+}
+
+/* Dark mode border fix */
+:global(body.dark-mode) .experience-item {
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.exp-header {
+    margin-bottom: 0.5rem;
+}
+
 .exp-company {
-    color: var(--color-text-light);
+    font-size: 1.5rem;
+    font-weight: 400;
+    margin-bottom: 0.25rem;
+    color: var(--text-color);
 }
 
-.exp-year {
-    text-align: right;
-    font-family: var(--font-sans);
+.exp-role {
+    font-size: 1.2rem;
+    font-weight: 300;
+    color: var(--text-secondary);
+    display: block;
+    margin-bottom: 0.5rem;
+}
+
+.exp-date {
+    font-size: 0.8rem;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    color: var(--text-secondary);
+    display: block;
+    margin-bottom: 1rem;
+}
+
+.exp-description {
+    font-size: 1rem;
+    line-height: 1.6;
+    color: var(--text-secondary);
+    max-width: 800px;
+}
+
+/* Nested Roles (NVA Style) */
+.nested-group .exp-company {
+    margin-bottom: 2rem;
+}
+
+.nested-role {
+    position: relative;
+    padding-left: 2rem;
+    margin-bottom: 2.5rem;
+}
+
+.nested-role:last-child {
+    margin-bottom: 0;
+}
+
+/* The vertical line */
+.nested-group {
+    position: relative;
+}
+
+.nested-group::before {
+    content: '';
+    position: absolute;
+    left: 7px;
+    /* Adjust based on dot size/position */
+    top: 3.5rem;
+    /* Start below the company name */
+    bottom: 2rem;
+    /* End before the last item finishes */
+    width: 1px;
+    background-color: var(--text-secondary);
+    opacity: 0.3;
+}
+
+.role-marker {
+    position: absolute;
+    left: 0;
+    top: 0.6rem;
+    width: 15px;
+    height: 15px;
+    border-radius: 50%;
+    background-color: var(--bg-color);
+    border: 2px solid var(--text-color);
+    z-index: 1;
+}
+
+.role-content .exp-role {
+    font-size: 1.1rem;
+    font-weight: 500;
+    color: var(--text-color);
+    margin-bottom: 0.25rem;
+}
+
+.role-description {
+    list-style: none;
+    padding: 0;
+    margin-top: 1rem;
+}
+
+.role-description li {
+    position: relative;
+    padding-left: 1.5rem;
+    margin-bottom: 0.5rem;
+    font-size: 1rem;
+    line-height: 1.6;
+    color: var(--text-secondary);
+}
+
+.role-description li::before {
+    content: '•';
+    position: absolute;
+    left: 0;
+    color: var(--text-secondary);
+}
+
+/* Education Section */
+.education-section {
+    margin-top: 4rem;
+    padding-top: 4rem;
+    border-top: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+:global(body.dark-mode) .education-section {
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.education-item h3 {
+    font-size: 1.2rem;
+    font-weight: 500;
+    margin-bottom: 0.5rem;
+}
+
+.education-item p {
+    font-size: 1rem;
+    color: var(--text-secondary);
+    margin-bottom: 0.25rem;
+}
+
+.education-item .edu-date {
+    margin-top: 1rem;
     font-size: 0.9rem;
-    color: #999;
 }
 
-@media (max-width: 1024px) {
-    .about-container {
-        padding-left: 2rem;
-        padding-right: 2rem;
-    }
-
+@media (max-width: 768px) {
     .about-title {
         font-size: 6rem;
+    }
+
+    .about-content {
+        grid-template-columns: 1fr;
+        gap: 2rem;
     }
 
     .about-grid {
         grid-template-columns: 1fr;
         gap: 3rem;
     }
-}
 
-@media (max-width: 768px) {
-    .about-content {
-        grid-template-columns: 1fr;
-        gap: 2rem;
-        margin-bottom: 4rem;
+    .nested-group::before {
+        display: none;
+        /* Hide line on mobile if it gets messy, or adjust */
     }
 
-    .about-image {
-        max-width: 100%;
-        /* Full width on mobile */
+    .nested-role {
+        padding-left: 0;
+        border-left: 2px solid var(--text-secondary);
+        padding-left: 1.5rem;
+        margin-left: 0.5rem;
     }
 
-    .about-bio {
-        margin-bottom: 3rem;
-    }
-
-    .about-title {
-        font-size: 4rem;
-    }
-
-    .about-grid {
-        gap: 2rem;
-        margin-bottom: 3rem;
-    }
-
-    .experience-item {
-        grid-template-columns: 1fr;
-        gap: 0.25rem;
-    }
-
-    .exp-year {
-        text-align: left;
+    .role-marker {
+        display: none;
     }
 }
