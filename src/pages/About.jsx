@@ -2,6 +2,7 @@ import React from 'react';
 import { motion } from 'framer-motion';
 import { Helmet } from 'react-helmet-async';
 import './About.css';
+import headshot from '../assets/photos/headshot.webp';
 
 const About = () => {
     const services = [
@@ -42,22 +43,33 @@ const About = () => {
                         hi.
                     </motion.h1>
 
-                    <motion.div
-                        className="about-bio"
-                        initial={{ y: 20, opacity: 0 }}
-                        animate={{ y: 0, opacity: 1 }}
-                        transition={{ delay: 0.3 }}
-                    >
-                        <p>
-                            My name is Jenna Eve and I am a graphic designer based in Virginia Beach, VA. I recently graduated from Old Dominion University with a degree in Graphic Design. I currently work for National Vascular Associates as a Digital Marketing Coordinator in Virginia Beach.
-                        </p>
-                        <p>
-                            My passion for graphic design ignited when I realized its power to transform ideas into meaningful connections. As I continue to evolve, I’m especially drawn to the intersection of design and technology, focusing on creating interfaces that are not only visually compelling but also intuitive, purposeful, and impactful.
-                        </p>
-                        <p>
-                            Outside of work, I’m either taking my dog on a totally “necessary” walk that just so happens to lead to a coffee shop for an iced matcha latte, convincing myself at 2AM that my room desperately needs a new layout… for the third time this month, or I end back up at my computer screen playing Minecraft until I notice it’s past my bed time.
-                        </p>
-                    </motion.div>
+                    <div className="about-content">
+                        <motion.div
+                            className="about-image"
+                            initial={{ opacity: 0, x: -20 }}
+                            animate={{ opacity: 1, x: 0 }}
+                            transition={{ delay: 0.3 }}
+                        >
+                            <img src={headshot} alt="Jenna Eve" />
+                        </motion.div>
+
+                        <motion.div
+                            className="about-bio"
+                            initial={{ y: 20, opacity: 0 }}
+                            animate={{ y: 0, opacity: 1 }}
+                            transition={{ delay: 0.4 }}
+                        >
+                            <p>
+                                My name is Jenna Eve and I am a graphic designer based in Virginia Beach, VA. I recently graduated from Old Dominion University with a degree in Graphic Design. I currently work for National Vascular Associates as a Digital Marketing Coordinator in Virginia Beach.
+                            </p>
+                            <p>
+                                My passion for graphic design ignited when I realized its power to transform ideas into meaningful connections. As I continue to evolve, I’m especially drawn to the intersection of design and technology, focusing on creating interfaces that are not only visually compelling but also intuitive, purposeful, and impactful.
+                            </p>
+                            <p>
+                                Outside of work, I’m either taking my dog on a totally “necessary” walk that just so happens to lead to a coffee shop for an iced matcha latte, convincing myself at 2AM that my room desperately needs a new layout… for the third time this month, or I end back up at my computer screen playing Minecraft until I notice it’s past my bed time.
+                            </p>
+                        </motion.div>
+                    </div>
                 </section>
 
                 <div className="about-grid">
