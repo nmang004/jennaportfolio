@@ -16,11 +16,12 @@ import Footer from './components/Footer';
 import { AnimatePresence } from 'framer-motion';
 import { useLocation } from 'react-router-dom';
 
-import { useEffect } from 'react';
+import { useEffect, useRef } from 'react';
 import Lenis from '@studio-freight/lenis';
 
 function App() {
   const location = useLocation();
+  const lenisRef = useRef(null);
 
   useEffect(() => {
     const lenis = new Lenis({
@@ -33,6 +34,7 @@ function App() {
       smoothTouch: false,
       touchMultiplier: 2,
     });
+    lenisRef.current = lenis;
 
     function raf(time) {
       lenis.raf(time);
@@ -53,7 +55,13 @@ function App() {
       <ThemeToggle />
       <TopRightNav />
       <FloatingDock />
-      <AnimatePresence mode="wait">
+      <AnimatePresence
+        mode="wait"
+        onExitComplete={() => {
+          window.scrollTo(0, 0);
+          lenisRef.current?.scrollTo(0, { immediate: true });
+        }}
+      >
         <Routes location={location} key={location.pathname}>
           <Route path="/" element={<Home />} />
           <Route path="/about" element={<About />} />
