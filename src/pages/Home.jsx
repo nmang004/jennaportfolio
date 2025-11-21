@@ -31,7 +31,7 @@ const Home = () => {
                     </h1>
                     <div className="hero-bio-container">
                         <p className="hero-bio">
-                            graphic designer + digital marketer
+                            graphic design + digital marketing
                         </p>
                         <motion.p
                             className="hero-tagline"
