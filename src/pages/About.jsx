@@ -5,6 +5,21 @@ import './About.css';
 import headshot from '../assets/photos/headshot.webp';
 
 const About = () => {
+    const containerVariants = {
+        hidden: { opacity: 0 },
+        show: {
+            opacity: 1,
+            transition: {
+                staggerChildren: 0.1
+            }
+        }
+    };
+
+    const itemVariants = {
+        hidden: { opacity: 0, y: 20 },
+        show: { opacity: 1, y: 0 }
+    };
+
     return (
         <motion.div
             className="about-page"
@@ -79,8 +94,8 @@ const About = () => {
                                         <h4 className="exp-role">Digital Marketing Coordinator</h4>
                                         <span className="exp-date">NOV 2025 — Present</span>
                                         <ul className="role-description">
-                                            <li>Create and manage social media content across multiple platforms, ensuring brand consistency and audience engagement</li>
-                                            <li>Design comprehensive marketing materials including brochures, flyers, posters, and business cards while maintaining brand standards</li>
+                                            <li>Creates and manages social media content across multiple platforms, ensuring brand consistency and audience engagement</li>
+                                            <li>Designs comprehensive marketing materials including brochures, flyers, posters, and business cards while maintaining brand standards</li>
                                             <li>Manage website updates, Google Business Profiles, landing pages, and digital lead management systems</li>
                                             <li>Execute email marketing campaigns including newsletters and updates to boost engagement and conversions</li>
                                         </ul>
@@ -93,9 +108,9 @@ const About = () => {
                                         <h4 className="exp-role">Social Media & Design Associate</h4>
                                         <span className="exp-date">JUN 2025 — NOV 2025</span>
                                         <ul className="role-description">
-                                            <li>Creates graphics, videos, and copy for social media and print, ensuring brand and HIPAA compliance</li>
-                                            <li>Collaborates with leadership to refine and implement content strategies, maintains an organized content calendar, and incorporates feedback in an approval-based workflow</li>
-                                            <li>Captures and analyzes engagement data using UTM tracking and performance insights, staying current with social media trends to optimize reach while maintaining consistent brand messaging</li>
+                                            <li>Created graphics, videos, and copy for social media and print, ensuring brand and HIPAA compliance</li>
+                                            <li>Collaborated with leadership to refine and implement content strategies, maintained an organized content calendar, and incorporated feedback in an approval-based workflow</li>
+                                            <li>Captured and analyzes engagement data using UTM tracking and performance insights, stayed current with social media trends to optimize reach while maintaining consistent brand messaging</li>
                                         </ul>
                                     </div>
                                 </div>
@@ -116,21 +131,6 @@ const About = () => {
                                 </div>
                             </div>
 
-                            {/* ODU Art Studio */}
-                            <div className="experience-item">
-                                <div className="exp-header">
-                                    <h3 className="exp-company">Old Dominion University — Norfolk, VA</h3>
-                                    <span className="exp-role">Art Studio Assistant</span>
-                                </div>
-                                <div className="exp-details">
-                                    <span className="exp-date">JAN 2024 — MAY 2025</span>
-                                    <ul className="role-description">
-                                        <li>Assisted students with letterpress printing processes, including typesetting, inking, and press operation, supporting both technical execution and creative outcomes</li>
-                                        <li>Maintained a clean, organized studio environment by preparing workspaces, restocking, and ensuring safe operation of equipment</li>
-                                    </ul>
-                                </div>
-                            </div>
-
                         </div>
                     </motion.section>
                 </div>
@@ -144,10 +144,60 @@ const About = () => {
                     >
                         <h2>Education</h2>
                         <div className="education-item">
-                            <h3>Old Dominion University — Norfolk, Virginia</h3>
-                            <p>Bachelors of Fine Arts in Graphic Design</p>
+                            <h3>Old Dominion University — Norfolk, VA</h3>
+                            <p>Bachelor of Fine Arts in Graphic Design</p>
                             <p>Minor in Sociology</p>
-                            <p className="edu-date">May 2025 — GPA: 3.94</p>
+                            <p className="edu-date">May 2025 — GPA 3.94</p>
+                        </div>
+                    </motion.section>
+                </div>
+
+                <div className="skills-section">
+                    <motion.section
+                        initial="hidden"
+                        whileInView="show"
+                        viewport={{ once: true }}
+                        variants={containerVariants}
+                    >
+                        <h2>Skills</h2>
+                        <div className="skills-grid">
+                            {[
+                                "Advertising Design", "Brand Identity", "Color Theory & Application",
+                                "Creative Direction", "Design Systems & Style Guides", "Editorial Design",
+                                "Illustration", "Layout Design", "Logo Design", "Marketing",
+                                "Photography", "Print Design", "Product Design", "Prototyping",
+                                "Responsive Design", "Search Engine Optimization", "Typography",
+                                "UI/UX Design", "Video Editing", "Web Design", "Wire-framing"
+                            ].map((skill, index) => (
+                                <motion.div key={index} className="skill-item" variants={itemVariants}>
+                                    {skill}
+                                </motion.div>
+                            ))}
+                        </div>
+                    </motion.section>
+                </div>
+
+                <div className="software-section">
+                    <motion.section
+                        initial="hidden"
+                        whileInView="show"
+                        viewport={{ once: true }}
+                        variants={containerVariants}
+                    >
+                        <h2>Softwares / Toolkit</h2>
+                        <div className="software-grid">
+                            {[
+                                "Adobe After Effects", "Adobe Express", "Adobe Illustrator",
+                                "Adobe InDesign", "Adobe Lightroom", "Adobe Photoshop",
+                                "Adobe Premiere Pro", "Canva", "Figma/FigJam", "Google Ads",
+                                "Google Gemini", "Google Workspace", "Google Business Profile",
+                                "Microsoft 365", "Notion", "Procreate", "SquareSpace",
+                                "Trello", "WordPress", "Zoho", "Zoom"
+                            ].map((tool, index) => (
+                                <motion.div key={index} className="software-item" variants={itemVariants}>
+                                    {tool}
+                                </motion.div>
+                            ))}
                         </div>
                     </motion.section>
                 </div>

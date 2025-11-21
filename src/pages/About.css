@@ -239,7 +239,6 @@
 
     .nested-group::before {
         display: none;
-        /* Hide line on mobile if it gets messy, or adjust */
     }
 
     .nested-role {
@@ -251,5 +250,75 @@
 
     .role-marker {
         display: none;
+    }
+}
+
+/* Skills & Software Sections */
+.skills-section,
+.software-section {
+    margin-top: 4rem;
+    padding-top: 4rem;
+    border-top: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+:global(body.dark-mode) .skills-section,
+:global(body.dark-mode) .software-section {
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.skills-section h2,
+.software-section h2 {
+    font-size: 0.9rem;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    margin-bottom: 2rem;
+    color: var(--text-secondary);
+    font-weight: 500;
+}
+
+.skills-grid,
+.software-grid {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+}
+
+.skill-item,
+.software-item {
+    font-size: 1rem;
+    color: var(--text-color);
+    padding: 0.75rem 1.5rem;
+    background-color: rgba(0, 0, 0, 0.03);
+    border-radius: 50px;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    border: 1px solid transparent;
+    cursor: default;
+}
+
+:global(body.dark-mode) .skill-item,
+:global(body.dark-mode) .software-item {
+    background-color: rgba(255, 255, 255, 0.05);
+}
+
+.skill-item:hover,
+.software-item:hover {
+    transform: translateY(-3px) scale(1.02);
+    background-color: var(--bg-color);
+    border-color: #ff69b4;
+    box-shadow: 0 4px 12px rgba(255, 105, 180, 0.15);
+    color: #ff69b4;
+}
+
+@media (max-width: 768px) {
+
+    .skills-grid,
+    .software-grid {
+        gap: 0.75rem;
+    }
+
+    .skill-item,
+    .software-item {
+        font-size: 0.9rem;
+        padding: 0.5rem 1rem;
     }
 }
