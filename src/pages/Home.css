@@ -78,6 +78,13 @@
     }
 }
 
+/* Respect reduced motion preference */
+@media (prefers-reduced-motion: reduce) {
+    .star-icon {
+        animation: none;
+    }
+}
+
 .work {
     max-width: 1200px;
     margin: 0 auto;

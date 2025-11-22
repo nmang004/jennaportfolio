@@ -2,8 +2,8 @@
     position: fixed;
     bottom: 2rem;
     right: 2rem;
-    width: 40px;
-    height: 40px;
+    width: 48px;
+    height: 48px;
     border-radius: 50%;
     background-color: var(--text-color);
     color: var(--bg-color);
@@ -14,14 +14,18 @@
     justify-content: center;
     align-items: center;
     font-size: 1.2rem;
-    transition: background-color 0.3s ease, color 0.3s ease;
+    transition: background-color 0.3s ease, color 0.3s ease, transform 0.3s ease;
+}
+
+.theme-toggle:active {
+    transform: scale(0.95);
 }
 
 @media (max-width: 768px) {
     .theme-toggle {
-        bottom: 6rem;
+        bottom: 7.5rem;
         right: 1.5rem;
         top: auto;
-        /* Reset top */
+        /* Moved higher to avoid conflict with FloatingDock + safe area */
     }
 }

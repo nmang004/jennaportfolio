@@ -20,11 +20,21 @@
     display: flex;
     align-items: center;
     justify-content: center;
+    /* Minimum touch target size */
+    min-width: 44px;
+    min-height: 44px;
+    padding: 0.5rem;
 }
 
 .social-icon:hover {
     color: #ff69b4;
     transform: translateY(-2px);
+}
+
+/* Touch feedback for mobile devices */
+.social-icon:active {
+    color: #ff69b4;
+    transform: translateY(-2px) scale(0.95);
 }
 
 /* Dark mode support */
@@ -40,15 +50,22 @@ body.dark-mode .social-icon:hover {
     .top-right-nav {
         top: 1.5rem;
         right: 1.5rem;
-        gap: 1rem;
+        gap: 0.5rem;
     }
 
     .social-icons {
-        gap: 1rem;
+        gap: 0.5rem;
+    }
+
+    .social-icon {
+        /* Ensure proper touch target on mobile - 48x48px */
+        min-width: 48px;
+        min-height: 48px;
+        padding: 0.75rem;
     }
 
     .social-icon svg {
-        width: 18px;
-        height: 18px;
+        width: 20px;
+        height: 20px;
     }
 }

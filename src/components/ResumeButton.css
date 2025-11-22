@@ -35,6 +35,17 @@
     transform: translate(2px, -2px);
 }
 
+/* Touch feedback for mobile */
+.resume-button:active {
+    background-color: rgba(255, 105, 180, 0.25);
+    transform: translateY(0);
+    box-shadow: 0 2px 6px rgba(255, 105, 180, 0.2);
+}
+
+body.dark-mode .resume-button:active {
+    background-color: rgba(255, 105, 180, 0.2);
+}
+
 /* Dark mode adjustment - keeping it timid */
 body.dark-mode .resume-button {
     background-color: rgba(255, 105, 180, 0.05);
@@ -53,7 +64,9 @@ body.dark-mode .resume-button:hover {
 @media (max-width: 768px) {
     .resume-button {
         /* Position handled by TopRightNav */
-        padding: 0.6rem 1.2rem;
+        padding: 0.75rem 1.3rem;
         font-size: 0.8rem;
+        min-height: 44px;
+        /* Ensure proper touch target */
     }
 }

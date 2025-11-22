@@ -75,6 +75,10 @@ const Playground = () => {
         const ctx = canvas.getContext('2d');
         let animationFrameId;
 
+        // Detect mobile for performance optimization
+        const isMobile = /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent) ||
+            (window.matchMedia && window.matchMedia('(max-width: 768px)').matches);
+
         const resizeCanvas = () => {
             canvas.width = window.innerWidth;
             canvas.height = window.innerHeight;
@@ -183,7 +187,8 @@ const Playground = () => {
 
             draw() {
                 ctx.fillStyle = this.color;
-                if (this.type === 'fluid' || this.type === 'audio') {
+                // Reduce expensive shadow effects on mobile
+                if (!isMobile && (this.type === 'fluid' || this.type === 'audio')) {
                     ctx.shadowBlur = 15;
                     ctx.shadowColor = this.color;
                 } else {
@@ -200,13 +205,21 @@ const Playground = () => {
             const currentMode = modeRef.current;
             const particles = particlesRef.current;
 
-            // Limits
-            const limit = currentMode === 'typography' ? 2000 : 300;
-            if (particles.length > limit) particles.splice(0, 5);
+            // Aggressive mobile optimization: reduce particle limits
+            let limit, count;
+            if (isMobile) {
+                // Mobile: drastically reduced limits for better performance
+                limit = currentMode === 'typography' ? 100 : 50;
+                count = 1; // Always spawn just 1 particle on mobile
+            } else {
+                // Desktop: original limits
+                limit = currentMode === 'typography' ? 2000 : 300;
+                count = currentMode === 'gravity' ? 1 : 2;
+                if (currentMode === 'typography') count = 5;
+                if (currentMode === 'audio') count = 1;
+            }
 
-            let count = currentMode === 'gravity' ? 1 : 2;
-            if (currentMode === 'typography') count = 5;
-            if (currentMode === 'audio') count = 1;
+            if (particles.length > limit) particles.splice(0, 5);
 
             for (let i = 0; i < count; i++) {
                 particles.push(new Particle(
@@ -259,12 +272,14 @@ const Playground = () => {
                 ctx.fillRect(0, 0, canvas.width, canvas.height);
             }
 
-            // Constellation Lines
+            // Constellation Lines (optimized for mobile)
             if (currentMode === 'constellation') {
                 ctx.strokeStyle = 'rgba(255, 255, 255, 0.15)';
                 ctx.lineWidth = 1;
-                for (let i = 0; i < particles.length; i++) {
-                    for (let j = i + 1; j < particles.length; j++) {
+                // Limit constellation connections on mobile for performance
+                const maxConnections = isMobile ? Math.min(particles.length, 30) : particles.length;
+                for (let i = 0; i < maxConnections; i++) {
+                    for (let j = i + 1; j < maxConnections; j++) {
                         const dx = particles[i].x - particles[j].x;
                         const dy = particles[i].y - particles[j].y;
                         const dist = Math.sqrt(dx * dx + dy * dy);

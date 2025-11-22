@@ -24,6 +24,15 @@ function App() {
   const lenisRef = useRef(null);
 
   useEffect(() => {
+    // Detect mobile devices - disable Lenis for better performance and native scroll feel
+    const isMobile = /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent) ||
+      (window.matchMedia && window.matchMedia('(max-width: 768px)').matches);
+
+    // Only initialize Lenis on desktop
+    if (isMobile) {
+      return; // Use native scroll on mobile
+    }
+
     const lenis = new Lenis({
       duration: 1.2,
       easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)),

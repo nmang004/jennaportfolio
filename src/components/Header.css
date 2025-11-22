@@ -63,8 +63,44 @@
 
 @media (max-width: 768px) {
     .site-header {
-        position: absolute;
+        position: fixed;
         top: 1.5rem;
         left: 1.5rem;
+    }
+
+    .logo-name-svg {
+        margin-left: 0;
+        height: 1rem;
+    }
+
+    .logo-icon {
+        width: 36px;
+        height: 36px;
+        font-size: 1.3rem;
+    }
+
+    .logo-role {
+        font-size: 0.7rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .site-header {
+        top: 1rem;
+        left: 1rem;
+    }
+
+    .logo-container {
+        gap: 0.75rem;
+    }
+
+    .logo-icon {
+        width: 32px;
+        height: 32px;
+        font-size: 1.2rem;
+    }
+
+    .logo-name-svg {
+        height: 0.9rem;
     }
 }

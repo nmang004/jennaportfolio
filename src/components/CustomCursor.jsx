@@ -8,6 +8,17 @@ const CustomCursor = () => {
     const [linkHovered, setLinkHovered] = useState(false);
     const [cursorText, setCursorText] = useState("");
 
+    // Detect if device is mobile/touch-only
+    const isMobile = () => {
+        return /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent) ||
+            (window.matchMedia && window.matchMedia('(max-width: 768px)').matches);
+    };
+
+    // Don't render custom cursor on mobile
+    if (isMobile()) {
+        return null;
+    }
+
     useEffect(() => {
         const addEventListeners = () => {
             document.addEventListener("mousemove", onMouseMove);

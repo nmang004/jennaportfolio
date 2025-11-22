@@ -1,6 +1,7 @@
 .contact-page {
     padding-top: 8rem;
     min-height: 100vh;
+    min-height: 100dvh; /* Dynamic viewport height for mobile browsers */
     display: flex;
     flex-direction: column;
 }
@@ -86,6 +87,15 @@ body.dark-mode .social-item {
 body.dark-mode .social-item:hover {
     box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
     border-color: var(--color-accent);
+}
+
+.social-item:active {
+    transform: translateY(-2px);
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.05);
+}
+
+body.dark-mode .social-item:active {
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.3);
 }
 
 .social-name {

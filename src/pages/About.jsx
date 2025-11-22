@@ -147,12 +147,10 @@ const About = () => {
                             <div className="exp-header">
                                 <h3 className="exp-company">Old Dominion University — Norfolk, VA</h3>
                                 <span className="exp-role">Bachelor of Fine Arts in Graphic Design</span>
+                                <span className="exp-role">Minor in Sociology</span>
                             </div>
                             <div className="exp-details">
                                 <span className="exp-date">May 2025 — GPA 3.94</span>
-                                <ul className="role-description">
-                                    <li>Minor in Sociology</li>
-                                </ul>
                             </div>
                         </div>
                     </motion.section>

@@ -37,6 +37,16 @@ body.dark-mode .project-card:hover .card-inner {
     box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
 }
 
+/* Touch feedback for mobile */
+.project-card:active .card-inner {
+    transform: translateY(-2px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.05);
+}
+
+body.dark-mode .project-card:active .card-inner {
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+}
+
 .card-content {
     padding: 5rem 4rem;
     display: flex;

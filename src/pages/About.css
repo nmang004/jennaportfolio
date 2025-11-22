@@ -2,6 +2,7 @@
     padding-top: 180px;
     padding-bottom: 80px;
     min-height: 100vh;
+    min-height: 100dvh; /* Dynamic viewport height for mobile browsers */
     background-color: var(--bg-color);
     color: var(--text-color);
 }
@@ -57,7 +58,7 @@
 
 .about-grid {
     display: block;
-    margin-bottom: 4rem;
+    margin-bottom: 2rem;
 }
 
 .experience-section {
@@ -65,7 +66,9 @@
 }
 
 .experience-section h2,
-.education-section h2 {
+.education-section h2,
+.skills-section h2,
+.software-section h2 {
     font-size: 0.9rem;
     text-transform: uppercase;
     letter-spacing: 0.1em;
@@ -74,13 +77,20 @@
     font-weight: 500;
 }
 
-.experience-item {
+/* Unified Item Styling */
+.experience-item,
+.education-item,
+.skills-grid,
+.software-grid {
     border-top: 1px solid rgba(0, 0, 0, 0.1);
     padding-top: 2rem;
+    padding-bottom: 2rem;
 }
 
-/* Dark mode border fix */
-:global(body.dark-mode) .experience-item {
+:global(body.dark-mode) .experience-item,
+:global(body.dark-mode) .education-item,
+:global(body.dark-mode) .skills-grid,
+:global(body.dark-mode) .software-grid {
     border-top: 1px solid rgba(255, 255, 255, 0.1);
 }
 
@@ -198,15 +208,13 @@
 /* Education Section */
 .education-section {
     margin-top: 0;
-    padding-top: 2rem;
-    border-top: 1px solid rgba(0, 0, 0, 0.1);
-}
-
-:global(body.dark-mode) .education-section {
-    border-top: 1px solid rgba(255, 255, 255, 0.1);
 }
 
 @media (max-width: 768px) {
+    .about-page {
+        padding-top: 140px;
+    }
+
     .about-title {
         font-size: 6rem;
     }
@@ -237,27 +245,38 @@
     }
 }
 
+/* Small phone optimization */
+@media (max-width: 480px) {
+    .about-page {
+        padding-top: 120px;
+    }
+
+    .about-container {
+        padding: 0 1.5rem;
+    }
+
+    .about-title {
+        font-size: 4rem;
+        margin-bottom: 1.5rem;
+    }
+
+    .exp-company {
+        font-size: 1.5rem;
+    }
+
+    .exp-role {
+        font-size: 1.1rem;
+    }
+
+    .about-bio p {
+        font-size: 1rem;
+    }
+}
+
 /* Skills & Software Sections */
 .skills-section,
 .software-section {
-    margin-top: 4rem;
-    padding-top: 4rem;
-    border-top: 1px solid rgba(0, 0, 0, 0.1);
-}
-
-:global(body.dark-mode) .skills-section,
-:global(body.dark-mode) .software-section {
-    border-top: 1px solid rgba(255, 255, 255, 0.1);
-}
-
-.skills-section h2,
-.software-section h2 {
-    font-size: 0.9rem;
-    text-transform: uppercase;
-    letter-spacing: 0.1em;
-    margin-bottom: 2rem;
-    color: var(--text-secondary);
-    font-weight: 500;
+    margin-top: 2rem;
 }
 
 .skills-grid,
@@ -272,6 +291,9 @@
     font-size: 1rem;
     color: var(--text-color);
     padding: 0.75rem 1.5rem;
+    min-height: 44px;
+    display: inline-flex;
+    align-items: center;
     background-color: rgba(0, 0, 0, 0.03);
     border-radius: 50px;
     transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
@@ -293,6 +315,16 @@
     color: #ff69b4;
 }
 
+/* Touch feedback for mobile */
+.skill-item:active,
+.software-item:active {
+    transform: translateY(-1px) scale(0.98);
+    background-color: var(--bg-color);
+    border-color: #ff69b4;
+    box-shadow: 0 2px 8px rgba(255, 105, 180, 0.15);
+    color: #ff69b4;
+}
+
 @media (max-width: 768px) {
 
     .skills-grid,
@@ -303,6 +335,7 @@
     .skill-item,
     .software-item {
         font-size: 0.9rem;
-        padding: 0.5rem 1rem;
+        padding: 0.6rem 1.2rem;
+        min-height: 44px;
     }
 }
