@@ -5,8 +5,8 @@
 
 .card-inner {
     display: grid;
-    grid-template-columns: 1.2fr 1.8fr;
-    /* More space for image */
+    grid-template-columns: 1fr 1fr;
+    /* Equal space for text and image */
     background: var(--bg-color);
     /* Use theme background */
     border: 1px solid rgba(0, 0, 0, 0.05);
@@ -16,8 +16,7 @@
     transition: transform 0.4s cubic-bezier(0.22, 1, 0.36, 1), box-shadow 0.4s ease, background-color 0.3s ease, border-color 0.3s ease;
     text-decoration: none;
     color: inherit;
-    min-height: 500px;
-    /* Taller cards */
+    /* No min-height - let content determine height */
 }
 
 body.dark-mode .card-inner {
@@ -54,6 +53,8 @@ body.dark-mode .project-card:active .card-inner {
     justify-content: space-between;
     /* Push meta to bottom */
     position: relative;
+    min-height: 400px;
+    /* Reduced height to better match 4:3 image ratio */
 }
 
 .card-title {
@@ -108,18 +109,17 @@ body.dark-mode .project-card:active .card-inner {
     /* Remove grey background */
     position: relative;
     overflow: hidden;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    padding-right: 4rem;
-    /* Space on the right */
+    display: block;
+    padding: 0;
+    /* No padding - let image fill to edges */
 }
 
 .card-image {
     width: 100%;
-    height: auto;
-    max-height: 90%;
+    height: 100%;
+    display: block;
     object-fit: contain;
+    object-position: center;
     transition: transform 0.6s cubic-bezier(0.22, 1, 0.36, 1);
     /* Drop shadow for the device mockup itself */
     filter: drop-shadow(0 20px 40px rgba(0, 0, 0, 0.15));

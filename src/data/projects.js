@@ -8,8 +8,7 @@ export const projects = [
         year: "2024",
         role: "Brand Identity, Web Design",
         client: "Mama Mango's Bakery",
-        image: "/work/mamamangos/brand-cover.jpg",
-        link: "/work/mamamangos",
+        image: "/thumbnails/mamamangos.png",
         details: {
             content: [], // Kept for compatibility, but empty as we use sections
             gallery: []  // Kept for compatibility
@@ -147,7 +146,7 @@ export const projects = [
         year: "2023",
         role: "UI/UX Design",
         client: "LifeLog Inc.",
-        image: "https://placehold.co/1200x800/EEE/31343C?text=LifeLog+Cover",
+        image: "/thumbnails/lifelog.png",
         link: "/work/lifelog",
         details: {
             content: [
@@ -169,7 +168,7 @@ export const projects = [
         year: "2025",
         role: "Editorial Design",
         client: "Old Dominion University",
-        image: "https://placehold.co/1200x800/EEE/31343C?text=ODU+Impact+Cover",
+        image: "/thumbnails/Odu Rec Well.png",
         link: "/work/odu-src-impact-report",
         details: {
             content: [
@@ -191,7 +190,7 @@ export const projects = [
         year: "2024",
         role: "Product Design",
         client: "City Transit",
-        image: "https://placehold.co/1200x800/EEE/31343C?text=QuickWay+Cover",
+        image: "/thumbnails/Quickway.png",
         link: "/work/quickway",
         details: {
             content: [
@@ -213,7 +212,7 @@ export const projects = [
         year: "2023",
         role: "Brand Strategy",
         client: "ODU Art Department",
-        image: "https://placehold.co/1200x800/EEE/31343C?text=GD+Branding+Cover",
+        image: "/thumbnails/Project Seed.png",
         link: "/work/odu-gd-branding",
         details: {
             content: [
@@ -279,7 +278,7 @@ export const projects = [
         year: "2023",
         role: "UI Design",
         client: "Shiori Reading App",
-        image: "https://placehold.co/1200x800/EEE/31343C?text=Shiori+Cover",
+        image: "/thumbnails/shiori.png",
         link: "/work/shiori",
         details: {
             content: [
