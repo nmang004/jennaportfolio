@@ -144,10 +144,16 @@ const About = () => {
                     >
                         <h2>Education</h2>
                         <div className="education-item">
-                            <h3>Old Dominion University — Norfolk, VA</h3>
-                            <p>Bachelor of Fine Arts in Graphic Design</p>
-                            <p>Minor in Sociology</p>
-                            <p className="edu-date">May 2025 — GPA 3.94</p>
+                            <div className="exp-header">
+                                <h3 className="exp-company">Old Dominion University — Norfolk, VA</h3>
+                                <span className="exp-role">Bachelor of Fine Arts in Graphic Design</span>
+                            </div>
+                            <div className="exp-details">
+                                <span className="exp-date">May 2025 — GPA 3.94</span>
+                                <ul className="role-description">
+                                    <li>Minor in Sociology</li>
+                                </ul>
+                            </div>
                         </div>
                     </motion.section>
                 </div>
