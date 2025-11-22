@@ -9,6 +9,7 @@ export const projects = [
         role: "Brand Identity, Web Design",
         client: "Mama Mango's Bakery",
         image: "/thumbnails/mamamangos.png",
+        link: "/work/mamamangos",
         details: {
             content: [], // Kept for compatibility, but empty as we use sections
             gallery: []  // Kept for compatibility
